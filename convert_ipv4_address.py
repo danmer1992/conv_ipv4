@@ -1,7 +1,7 @@
 import tkinter as tk
 import ipaddress
 
-def conv_addr():
+def conv_bin_sys():
     '''Функция конвертации адреса в двоичную систему'''
     address = address_entry.get()
     result = []
@@ -20,6 +20,9 @@ def conv_addr():
         label_result['text']= f'Your address is \n{address}'
     except ValueError:
         label_result['text']='Введите корректный адрес'
+
+def conv_hex_system():
+    pass
 
 def del_value():
     '''Удаление содержимого поля'''
@@ -41,7 +44,7 @@ win.resizable(False, False)
 address_entry = tk.Entry(win, font=('Calibri', 15),bd = 4)
 address_entry.grid(column=0, row=0, columnspan=2, sticky='wens')
 
-convert_button = tk.Button(win, text='Convert your address', command=conv_addr).grid(column=0, row=1, ipadx=5, ipady=5)
+convert_button = tk.Button(win, text='Convert your address', command=conv_bin_sys).grid(column=0, row=1, ipadx=5, ipady=5)
 delete_button = tk.Button(win, text='Delete content field', command=del_value).grid(column=1, row=1, ipadx=5, ipady=5)
 
 label_result = tk.Label(win, font = ('Calibri',12))
